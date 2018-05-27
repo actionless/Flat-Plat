@@ -1,6 +1,11 @@
 #! /bin/bash
 set -ueo pipefail
 
+# Make sure that parallel is GNU parallel and not moreutils.
+# Otherwise, it fails silently. There's no smooth way to detect this.
+if which parallel > /dev/null; then cmd=(parallel)
+else cmd=(xargs -n1); fi
+
 INDEX="assets.txt"
 SRC_FILE="assets.svg"
 SRC_FILE_2="assets@2.svg"

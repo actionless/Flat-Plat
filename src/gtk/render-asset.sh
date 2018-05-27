@@ -8,7 +8,7 @@ SRC_FILE="assets.svg"
 SRC_FILE_2="assets@2.svg"
 ASSETS_DIR="assets"
 
-i=${1}
+i="$1"
 
 if [ -f $ASSETS_DIR/$i.png ]; then
     echo $ASSETS_DIR/$i.png exists.
